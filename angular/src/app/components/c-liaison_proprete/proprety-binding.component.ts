@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
 })
 export class PropretyComponent{
     lien = 'https://dawan.fr';
-    isDisabled = false
+    isDisabled = true
 }

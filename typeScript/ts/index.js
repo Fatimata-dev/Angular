@@ -55,8 +55,18 @@ var Voiture = /** @class */ (function () {
             this.moteur = valeur;
         }
     };
+    Voiture.help = "Voici la notice de la voiture";
     return Voiture;
 }());
 var voiture = new Voiture();
 console.log(voiture.nbRoues);
 console.log(voiture.couleur);
+console.log(voiture.getMoteur());
+var p1 = {
+    prenom: 'Timfa',
+    nom: 'Emard',
+    description: function () {
+        console.log(this.nom + " " + this.prenom);
+    }
+};
+p1.description();

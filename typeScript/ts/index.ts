@@ -55,6 +55,8 @@ class Voiture{
     //Visibilitésde la propriétés
     public nbRoues:number = 4;
     private moteur = "Soninké";
+    protected frein: string;
+    static help = "Voici la notice de la voiture"
 
     constructor(){
         this.couleur = "Bleu"
@@ -71,4 +73,21 @@ class Voiture{
 const voiture: Voiture = new Voiture();
 console.log(voiture.nbRoues);
 console.log(voiture.couleur);
+console.log(voiture.getMoteur());
 
+interface Personne{
+    prenom:string;
+    nom:string;
+    //void la fonction ne renvoie rien
+    description(): void;
+}
+let p1: Personne = {
+    prenom:'Timfa',
+    nom:'Emard',
+    description:function() {
+        console.log(`${this.nom} ${this.prenom}`);
+        
+    }
+    
+}
+p1.description()
