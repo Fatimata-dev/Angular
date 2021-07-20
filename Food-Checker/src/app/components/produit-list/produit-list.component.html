@@ -1,6 +1,6 @@
-<h1 *ngIf="!ITEMS.length">Aucun Produit</h1>
-<div *ngIf="ITEMS.length" class="card-group">
-    <div *ngFor="let item of ITEMS" class="card">
+<h1 *ngIf="!produits.length">Aucun Produit</h1>
+<div *ngIf="produits.length" class="card-group">
+    <div *ngFor="let item of produits" class="card">
         <div  class="card " style="width: 18rem;">
             <img [src]="item.img" alt="" class="card-img-top" style="height: 20rem;">
             <div class="card-body">

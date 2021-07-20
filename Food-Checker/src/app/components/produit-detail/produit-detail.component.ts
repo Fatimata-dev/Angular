@@ -7,7 +7,7 @@ import { ITEMS } from 'src/items';
   styleUrls: ['./produit-detail.component.css']
 })
 export class ProduitDetailComponent implements OnInit {
-  ITEMS:{id:number, price:number, img:string,name:string}[]=ITEMS
+  produits = ITEMS
   constructor() { }
 
   ngOnInit(): void {

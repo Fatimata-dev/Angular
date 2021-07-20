@@ -6,9 +6,7 @@ import { ITEMS } from 'src/items';
   styleUrls: ['./produit-list.component.css']
 })  
 export class ProduitListComponent implements OnInit {
-  
-  // item = {}
-  ITEMS:{id:number, price:number, img:string,name:string}[]=ITEMS
+  produits = ITEMS
  
   
   constructor() {  }
