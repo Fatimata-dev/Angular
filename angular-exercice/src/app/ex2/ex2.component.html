@@ -1,0 +1,20 @@
+
+<h1> liste des utuilsateurs</h1>
+<h4 *ngIf="!utilisateurs.length ">Aucun utilisateur</h4>
+<table class="table" *ngIf="utilisateurs.length">
+        <thead>
+                <tr>
+                        <th>Nom</th>
+                        <th>Email</th>
+                        <th>Site Web</th>
+                </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let utuilsateur of utilisateurs">
+                        <td>{{utuilsateur.name}}</td>
+                        <td>{{utuilsateur.email}}</td>
+                        <td><a [href]=" 'https://' + utuilsateur.website">{{utuilsateur.website}}</a></td>
+                </tr>
+        </tbody>
+
+</table>

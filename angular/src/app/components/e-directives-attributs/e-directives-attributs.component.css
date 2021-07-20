@@ -1,0 +1,9 @@
+.txt{
+    font-weight: bolder;
+}
+.error {
+    color: red;
+}
+.static{
+    border: 2px dashed darksalmon;
+}

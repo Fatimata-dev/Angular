@@ -5,7 +5,9 @@ import { AppComponent } from './app/core/app.component';
 import { TitleComponent } from './app/components/a-title/title.component';
 import {InterpolationComponent} from './app/components/b-interpolation/interpolation.component'
 import {PropretyComponent} from './app/components/c-liaison_proprete/proprety-binding.component';
-import { DDirectivesStructurelleComponent } from './app/components/d-directives-structurelle/d-directives-structurelle.component'
+import { DDirectivesStructurelleComponent } from './app/components/e-directives-structurelle/d-directives-structurelle.component';
+import { DDirectivesAttributsComponent } from './app/components/e-directives-attributs/e-directives-attributs.component';
+import { FEvenementComponent } from './app/components/f-evenement/f-evenement.component'
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { DDirectivesStructurelleComponent } from './app/components/d-directives-
     TitleComponent,
     InterpolationComponent,
     PropretyComponent,
-    DDirectivesStructurelleComponent
+    DDirectivesStructurelleComponent,
+    DDirectivesAttributsComponent,
+    FEvenementComponent
   ],
   imports: [
     BrowserModule
