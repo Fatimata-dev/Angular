@@ -6,6 +6,7 @@
     <input type="number" id="" name="taille">
     <input type="submit" value="Ajouter">
 </form>
-<div>
+<p *ngIf="!todos.length">Aune tache pour le moment</p>
+<ul *ngIf="todos.length">
     <li *ngFor="let item of todos" [ngStyle]="{'color': item.color, 'font-size': item.size + 'em'}">{{item.text}}</li>
-</div>
+</ul>

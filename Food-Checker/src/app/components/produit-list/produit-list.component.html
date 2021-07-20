@@ -1,0 +1,15 @@
+<h1 *ngIf="!ITEMS.length">Aucun Produit</h1>
+<div *ngIf="ITEMS.length" class="card-group">
+    <div *ngFor="let item of ITEMS" class="card">
+        <div  class="card " style="width: 18rem;">
+            <img [src]="item.img" alt="" class="card-img-top" style="height: 20rem;">
+            <div class="card-body">
+            <p class="card-title">{{item.name}} </p>
+            <p class="card-text">{{item.price }}   € </p>
+            <a [href]="" class="btn btn-primary">Details</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
