@@ -1,0 +1,11 @@
+<h1>Exercie 4</h1>
+<form (submit)="addTask($event)">
+    <label for="todoList"></label>
+    <input type="text" id="todoList" name="todoList">
+    <input type="color" id="" name="couleur">
+    <input type="number" id="" name="taille">
+    <input type="submit" value="Ajouter">
+</form>
+<div>
+    <li *ngFor="let item of todos" [ngStyle]="{'color': item.color, 'font-size': item.size + 'em'}">{{item.text}}</li>
+</div>
