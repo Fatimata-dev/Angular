@@ -5,3 +5,18 @@
 <app-d-directives-structurelle></app-d-directives-structurelle>
 <app-e-directives-attributs></app-e-directives-attributs>
 <app-f-evenement></app-f-evenement>
+<app-g-input
+    message="Salut !" 
+    [listProduits]="produits">
+</app-g-input>
+
+<p>Compteur: {{ compteur }}</p> -->
+<app-h-output
+    [compteurEnfant]="compteur"
+    (myIncrementerCompteur)="incrementerParent(
+        $event
+    )"
+    (messageUpdate)="afficherMessage($event)"
+>
+
+</app-h-output>

@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  compteur = 0;
   title = 'angular';
+  produits = ['lorem', 'Ipsum', 'Dolor'];
+
+  afficherMessage(event:any) {
+    console.log(event);
+  }
+  incrementerParent(event: number) {
+    this.compteur = event;
+  }
 }
