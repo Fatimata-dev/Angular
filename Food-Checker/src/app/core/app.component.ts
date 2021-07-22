@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Food-Checker';
+  produitRecherche= ""
+  title = 'food-checker';
+  updateRecherche(event:any){
+    this.produitRecherche = event;
+    
+  }
 }

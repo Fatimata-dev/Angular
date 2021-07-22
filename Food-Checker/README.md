@@ -1,27 +1,52 @@
-# FoodChecker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+# Exercice TP: Food Checker
 
-## Development server
+## Partie 1
+1. Crée un nouveau projet intitulé food-checker. (ng new  food-checker)
+2. Créer un nouveau dossier nommé  ‘core’ dans :   src/app/.
+3. Déplacer les fichiers : **app.component.ts, html, spec.ts, css**  dans le dossier 
+‘core’.
+4. Crée un nouveau dossier ‘components’  dans:   src/app/
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+5. Générer un nouveau composant **Header** dans  src/app/components/
+6. Dans **header.component.html** , insérer:
+    - Un titre &lt;h1&gt;&lt;/h1&gt;
+7. Inclure le composant Header dans **app.component.html**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+8. Générer un nouveau composant **SearchBar** dans src/app/components/
+9. Dans **search-bar.component.html** , insérer un formulaire dans une balise &lt;nav&gt;&lt;/nav&gt; avec:
+    - un input de type search
+    - un input de type submit 
+10. Inclure le composant **SearchBar** dans le composant **Header**
+11. A ce stade vous devriez vous retrouver avec [ça](https://i.imgur.com/xaAVPsg.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Partie 2 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+11. Télécharger le fichier **item.ts** [Le tableaux de produit ici](https://www.dropbox.com/s/yv6fa8f9zmdsrnu/items.ts?dl=0) ou copier [ce tableau](https://www.dropbox.com/s/yv6fa8f9zmdsrnu/items.ts?dl=0) dans le dossier **src/assets**
 
-## Running end-to-end tests
+12. Creer un composant **ProduitList**.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+13. Dans **produit-list.component.ts**, créer un tableau en important les produits dans le dossiers **src/assets**
 
-## Further help
+```
+    import { ITEMS } from '';
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+14. Dans **produit-list.component.html**, 
+    - si il n'y a pas de produit dans la liste, on affiche 'Aucun produit disponibles'
+    - Sinon, pour chaque produit de la liste, on les affiches sous forme de cards ([bootstrap](https://getbootstrap.com/docs/5.0/components/card/) ou autres).
+
+15. Dans **app.component.html**, Afficher le composant **ProduitList**
+
+16. Voici un apercu du résultat: [voir ici](https://i.imgur.com/agbIJCc.png)
+
+# Partie 3 
+
+17. Créer un composant **ProduitDetail**, ce composant affichera les informations (factices suivantes):
+    - Le nom du produit
+    - Liste des ingrédients
+    - Les calories
+    - Le nutriscore

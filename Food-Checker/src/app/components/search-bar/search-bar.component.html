@@ -1,10 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="ex: Riz" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-  </nav>
-  
- 
+    <form (submit)="envoyerRecherche($event)" class="form-inline d-flex">
+      <input class="form-control mr-sm-2" type="search" placeholder="ex: Riz" aria-label="Search" name="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+    </form>
+</nav>

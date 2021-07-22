@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of , interval, Subscription} from 'rxjs';
 import {Utilisateur} from '../../class/utilisateur.component'
 @Component({
   selector: 'app-i-observable',
@@ -10,6 +10,7 @@ import {Utilisateur} from '../../class/utilisateur.component'
 export class IObservableComponent implements OnInit {
   utilisateurs:Utilisateur[]=[]
   nombres:number[]=[]
+  tempConnexion!:Subscription
   constructor(private http: HttpClient) { 
   }
 
@@ -21,6 +22,13 @@ export class IObservableComponent implements OnInit {
       ()=> {console.log();
       }
     );
+    this.tempConnexion = interval(1000).subscribe(
+      (valeur)=> console.log('Temps de connexion: ' + valeur)
+      
+    )
+  }
+  ngOnDestroy(){
+    this.tempConnexion.unsubscribe()
   }
   getNombre(){
     const nombresObs = of([1,5,8,6,4]);

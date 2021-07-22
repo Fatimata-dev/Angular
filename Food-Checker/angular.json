@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Food-Checker": {
+    "food-checker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Food-Checker",
+            "outputPath": "dist/food-checker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,12 +28,9 @@
             ],
             "styles": [
               "src/styles.css",
-             "node_modules/bootstrap/dist/css/bootstrap.min.css"
-              
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -72,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Food-Checker:build:production"
+              "browserTarget": "food-checker:build:production"
             },
             "development": {
-              "browserTarget": "Food-Checker:build:development"
+              "browserTarget": "food-checker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Food-Checker:build"
+            "browserTarget": "food-checker:build"
           }
         },
         "test": {
@@ -106,5 +103,5 @@
       }
     }
   },
-  "defaultProject": "Food-Checker"
+  "defaultProject": "food-checker"
 }
