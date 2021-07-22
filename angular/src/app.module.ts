@@ -16,6 +16,7 @@ import { KRoutingComponent } from './app/components/k-routing/k-routing.componen
 import { AppRountingModule } from './app/app-routing.module';
 import { ParamsComponent } from './app/components/k-routing/params/params.component';
 import { BackComponent } from './app/components/k-routing/back/back.component';
+import { NotFoundComponent } from './app/components/k-routing/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BackComponent } from './app/components/k-routing/back/back.component';
     JServiceComponent,
     KRoutingComponent,
     ParamsComponent,
-    BackComponent
+    BackComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
