@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Observable, of , interval, Subscription} from 'rxjs';
 import {Utilisateur} from '../../class/utilisateur.component'
 @Component({

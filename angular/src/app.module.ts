@@ -10,7 +10,8 @@ import { DDirectivesAttributsComponent } from './app/components/e-directives-att
 import { FEvenementComponent } from './app/components/f-evenement/f-evenement.component';
 import { GInputComponent } from './app/components/g-input/g-input.component';
 import { HOutputComponent } from './app/components/h-output/h-output.component';
-import { IObservableComponent } from './app/components/i-observable/i-observable.component'
+import { IObservableComponent } from './app/components/i-observable/i-observable.component';
+import { JServiceComponent } from './app/components/j-service/j-service.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { IObservableComponent } from './app/components/i-observable/i-observable
     FEvenementComponent,
     GInputComponent,
     HOutputComponent,
-    IObservableComponent
+    IObservableComponent,
+    JServiceComponent
   ],
   imports: [
     BrowserModule,
