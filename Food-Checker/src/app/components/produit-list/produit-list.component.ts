@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ITEMS } from '../../../assets/items';
+import {NavigationService}  from 'src/app/services/navigation.service'
+import {  Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-produit-list',
@@ -7,19 +9,26 @@ import { ITEMS } from '../../../assets/items';
   styleUrls: ['./produit-list.component.css']
 })
 export class ProduitListComponent implements OnInit {
-  @Input() produitChercher!: string;
+  produitChercherAbonnement!: Subscription 
+  nomProduit!: '';
   produits = ITEMS;
 
-  constructor() { }
+  constructor(private navigation:NavigationService) {
+    
+   }
 
   ngOnInit(): void {
+    this.produitChercherAbonnement = this.navigation.onProduitChercherUpdate.subscribe(
+      (produitRechercher) => this.filtrerProduits(produitRechercher)
+    );
   }
-  ngOnChanges(){
-    this.produits = ITEMS.filter(
-      (produit)=> {
-        const nomProduit = this.produitChercher.toLowerCase()
-        return produit.name.toLowerCase().includes(nomProduit)
-      }
-    )
+  filtrerProduits(produitRechercher:string) {
+    const nomProduitMini = produitRechercher.toLowerCase();
+    this.produits = ITEMS.filter(produit => {
+      return produit.name.toLowerCase().includes(nomProduitMini)
+    })
+  }
+  ngOnDestroy(){
+    this.produitChercherAbonnement.unsubscribe()
   }
 }

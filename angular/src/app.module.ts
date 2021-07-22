@@ -11,7 +11,10 @@ import { FEvenementComponent } from './app/components/f-evenement/f-evenement.co
 import { GInputComponent } from './app/components/g-input/g-input.component';
 import { HOutputComponent } from './app/components/h-output/h-output.component';
 import { IObservableComponent } from './app/components/i-observable/i-observable.component';
-import { JServiceComponent } from './app/components/j-service/j-service.component'
+import { JServiceComponent } from './app/components/j-service/j-service.component';
+import { KRoutingComponent } from './app/components/k-routing/k-routing.component'
+import { AppRountingModule } from './app/app-routing.module';
+import { ParamsComponent } from './app/components/k-routing/params/params.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { JServiceComponent } from './app/components/j-service/j-service.componen
     GInputComponent,
     HOutputComponent,
     IObservableComponent,
-    JServiceComponent
+    JServiceComponent,
+    KRoutingComponent,
+    ParamsComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRountingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,14 @@
 <div class="container-fluid">
     <h1>App component</h1>
-<app-title></app-title>
+    <div class="alert alet-info">
+        <h2>Router</h2>
+        <app-k-routing></app-k-routing>
+        <div class="alert alert-info">
+            <router-outlet></router-outlet>
+        </div>
+        
+    </div>
+<!-- <app-title></app-title>
 <app-interpolation></app-interpolation>
 <app-proprety-binding></app-proprety-binding>
 <app-d-directives-structurelle></app-d-directives-structurelle>
@@ -9,10 +17,10 @@
 <app-g-input
     message="Salut !" 
     [listProduits]="produits">
-</app-g-input>
+</app-g-input> -->
 
-<p>Compteur: {{ compteur }}</p> -->
-<app-h-output
+<!-- <p>Compteur: {{ compteur }}</p> -->
+<!-- <app-h-output
     [compteurEnfant]="compteur"
     (myIncrementerCompteur)="incrementerParent(
         $event
@@ -22,5 +30,6 @@
 
 </app-h-output>
 <app-i-observable></app-i-observable>
-<app-j-service></app-j-service>
+<app-j-service></app-j-service> -->
+
 </div>
