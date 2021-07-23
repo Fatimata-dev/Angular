@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ProduitListComponent } from './components/produit-list/produit-list.component';
 import { ProduitDetailComponent } from './components/produit-detail/produit-detail.component';
+import { AppRountingModule } from './app-routing.modules';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { ProduitDetailComponent } from './components/produit-detail/produit-deta
     ProduitDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRountingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
