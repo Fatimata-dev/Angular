@@ -1,0 +1,24 @@
+<h2>Formulaire Reactive Formulaire</h2>
+
+<input  [formControl]="usernameControl" type="text" placeholder="du texte" />
+
+<button (click)="sayHello()">Dire Marhaban</button>
+
+<form [formGroup]="loginForm">
+    <label for="">Nom</label>
+    <input formControlName="usernameField" type="text" placeholder="ex: fatim">
+    <label for="">Mot de passe</label>
+    <input formControlName="passwordField" type="password" >
+    <input type="submit" >
+</form>
+
+<!-- <p *ngIf="signUpForm.controls.passwordField.hasError('required')"> {{Ce champ est requis}} </p> -->
+<form [formGroup]="signUpForm" (submit)="inscription()">
+    <label for="">Nom</label>
+    <input formControlName="usernameField" type="text" placeholder="ex: fatim">
+    <label for="">Mot de passe</label>
+    <input formControlName="passwordField" type="password" >
+    <label for="">Confirmatione</label>
+    <input formControlName="passwordConfirmedFiels" type="password" >
+    <input type="submit" value="envoyer" >
+</form>

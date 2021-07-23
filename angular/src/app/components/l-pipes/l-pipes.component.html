@@ -20,3 +20,17 @@
 </p>
 <h3>Les Nombres</h3>
 <p>{{ 3.1415 | number:'1.1-2'}}</p>
+<h3>Chainage de pipes</h3>
+<p> {{dateDuJour | date:'full' | uppercase}} </p>
+
+<p>Monnaies: {{35.99 | currency}} </p>
+<p>Monnaies: {{35.99 | currency:'EUR'}} </p>
+<p>Monnaies: {{35.99 | currency:'EUR':'symbol':'':'fr'}} </p>
+<p>
+    {{ message | reverse}}
+</p>
+<p> {{dateDuJour | date:'full':'':langue}} </p>
+
+<button (click)="changerLangue('fr')" class="btn btn-danger">Français</button>
+<button (click)="changerLangue('de')" class="btn btn-warning">Anglais</button>
+<button (click)="changerLangue('ar')" class="btn btn-success">Arabe</button>

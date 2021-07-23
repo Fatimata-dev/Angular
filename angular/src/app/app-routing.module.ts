@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { MReactiveFormsComponent } from "./components/m-reactive-forms/m-reactive-forms.component";
 import { TitleComponent } from "./components/a-title/title.component";
 import { InterpolationComponent } from "./components/b-interpolation/interpolation.component";
 import { IObservableComponent } from "./components/i-observable/i-observable.component";
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: 'params/:name', component: ParamsComponent},
     {path: 'back', component: BackComponent},
     {path: 'pipe', component: LPipesComponent},
+    {path: 'form', component: MReactiveFormsComponent},
     {path: '**', component: NotFoundComponent}
 ]
 

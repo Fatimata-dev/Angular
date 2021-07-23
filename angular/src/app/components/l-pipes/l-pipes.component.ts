@@ -6,11 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./l-pipes.component.css']
 })
 export class LPipesComponent implements OnInit {
+  langue = 'fr'
   dateDuJour = new Date();
   message = "lorem"
   constructor() { }
 
   ngOnInit(): void {
   }
-
+changerLangue(langue: string){
+  this.langue = langue;
+}
 }
