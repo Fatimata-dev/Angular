@@ -7,6 +7,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { ProduitListComponent } from './components/produit-list/produit-list.component';
 import { ProduitDetailComponent } from './components/produit-detail/produit-detail.component';
 import { AppRountingModule } from './app-routing.modules';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AppRountingModule } from './app-routing.modules';
   ],
   imports: [
     BrowserModule,
-    AppRountingModule
+    AppRountingModule,
+    HttpClientModule
 
   ],
   providers: [],

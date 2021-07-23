@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ITEMS } from '../../../assets/items';
 import {NavigationService}  from 'src/app/services/navigation.service'
 import {  Subscription } from 'rxjs';
+import { ProduitService } from 'src/app/services/produit.service';
+import { Produit,  } from 'src/app/classes/produit';
+import { Page } from 'src/app/classes/page';
 
 @Component({
   selector: 'app-produit-list',
@@ -9,26 +11,88 @@ import {  Subscription } from 'rxjs';
   styleUrls: ['./produit-list.component.css']
 })
 export class ProduitListComponent implements OnInit {
-  produitChercherAbonnement!: Subscription 
-  nomProduit!: '';
-  produits = ITEMS;
+  produits: Produit[];
+  produitChercherAbonnement!: Subscription;
+  isLoading = false;
+  pagination = {index: 0, total: 0}
 
-  constructor(private navigation:NavigationService) {
-    
-   }
+  constructor(
+    private navigationService: NavigationService,
+    private produitService: ProduitService
+  ) {
+    this.produits = this.produitService.produits;
+  }
 
   ngOnInit(): void {
-    this.produitChercherAbonnement = this.navigation.onProduitChercherUpdate.subscribe(
-      (produitRechercher) => this.filtrerProduits(produitRechercher)
+    this.produitChercherAbonnement = this.navigationService.onProduitChercherUpdate.subscribe(
+      () => {
+        this.isLoading = true;
+        this.produitService.fetchProduits().subscribe(
+          this.fetchProduitNext,
+          (e) => console.error(e),
+          () => { this.isLoading = false}
+        );
+      }
+    );
+    if (!this.produits.length) {
+      this.isLoading = true;
+      this.produitService.fetchProduits().subscribe(
+        this.fetchProduitNext,
+        (e) => console.error(e),
+        () => { this.isLoading = false }
+      );
+    }
+  }
+
+  fetchProduitNext = (page: Page) => {
+    this.produitService.setProduits(page.products)
+    this.produits = this.produitService.produits;
+    // console.log(page);
+    this.pagination.index = page.page;
+    this.pagination.total = page.page_count;
+  }
+  
+
+  getArrayPages() {
+      const array = [];
+      for(let i = 1; i <= this.pagination.total; i++) {
+        array.push(i);
+      }
+      return array;
+  }
+
+  changePage(index: number) {
+    const nextOrPrevPage = this.pagination.index + index;
+    const maxPage = this.pagination.total;
+    if (nextOrPrevPage >= maxPage || nextOrPrevPage <= 1) return ;
+    this.isLoading =  true;
+    this.produitService.fetchProduits(nextOrPrevPage).subscribe(
+      this.fetchProduitNext,
+      (e) => console.error(e),
+      () => { this.isLoading = false }
     );
   }
-  filtrerProduits(produitRechercher:string) {
-    const nomProduitMini = produitRechercher.toLowerCase();
-    this.produits = ITEMS.filter(produit => {
-      return produit.name.toLowerCase().includes(nomProduitMini)
-    })
+
+  loadPage(numeroPage: number) {
+    this.isLoading = true;
+     this.produitService.fetchProduits(numeroPage).subscribe(
+        this.fetchProduitNext,
+        (e) => console.error(e),
+        () => { this.isLoading = false}
+     );
   }
-  ngOnDestroy(){
-    this.produitChercherAbonnement.unsubscribe()
+
+  setProduit(id: number) {
+    const produit = this.produits.find(
+      (p) => p.id === id
+    )
+    // if (produit != undefined) {
+    if (produit) {
+      this.produitService.setProduit(produit);
+    }
+  }
+
+  ngOnDestroy() {
+    this.produitChercherAbonnement.unsubscribe();
   }
 }
